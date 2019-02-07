@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание04</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const year = parseInt(prompt("Введите год: "))
+                //if (year % 4 != 0) {
+                //     document.getElementById("result").textContent = `${year} НЕ является високосным годом.`
+                // } else if (year % 100 != 0) {
+                //     document.getElementById("result").textContent = `${year} является високосным годом.`
+                // } else if (year % 400 != 0){ 
+                //     document.getElementById("result").textContent = `${year} НЕ является високосным годом.`
+                // } else { 
+                //     document.getElementById("result").textContent = `${year} является високосным годом.`
+                // }
+                if (year % 4 == 0 && year % 100!= 0 || year % 400 == 0) {
+                    document.getElementById("result").textContent = `${year} является високосным годом.` 
+                } else {
+                    document.getElementById("result").textContent = `${year} НЕ является високосным годом.`
+                }
+            </script>
+        </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание02</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                let num = 0
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+                num += 0.1
+
+                // конструкция if c двумя ветвями
+
+                if (Math.abs (num - 1.0) < 0.0000001) {
+                    document.getElementById("result").textContent = `Равны`
+                } else { document.getElementById("result").textContent = `Не равны`
+                }
+            </script>
+        </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru"> 
+        <head>
+            <meta charset=utf-8>
+            <title>Задание01</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const min = parseInt(prompt("Введите минимальное значение?"))
+                const max = parseInt(prompt("Введите максимальное значение?"))
+
+                const result = Math.tranc(min + Math.random () * (max + 1 - min))
+
+                document.getElementByID(`result`).textContent = `случайное число от ${min} до $ {max}: ${result}`
+                </script>
+        </body>
+</html>

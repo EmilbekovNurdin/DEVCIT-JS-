@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание07</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const year = parseInt(prompt("Введите год: "))
+                const month = parseInt(prompt("Введите номер месяца: "))
+                
+                let message
+                switch (month){
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        message = 31
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        message = 30
+                        break;
+                    case 2:
+                        if ((year % 4 == 0 && year % 100!= 0 || year % 400 == 0)) {
+                        message = 29 
+                        } else {
+                        days = 28 
+                        }
+                        break;
+                 
+                 default: 
+                    message = `Неверный номер месяца`
+                        break;
+                }
+
+                document.getElementById("result").textContent = message
+             </script>
+        </body>
+</html>

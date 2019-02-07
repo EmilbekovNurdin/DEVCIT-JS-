@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Markdown</title>
+        <meta name="author" content="A_Usenov">
+        <meta name="description" content="Документация о языке Markdown">
+        <meta name="keywords" content="Markdown, документация">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href= "#review">Обзор</a></li>
+                    <li><a href= "#headings">Заголовок</a></li>
+                    <li><a href= "#links">Ссылки</a></li>
+                    <li><a href= "#lists">Списки</a></li>
+                    <li><a href= "#quotes">Цитаты</a></li>
+                    <li><a href= "#images">Изображение</a></li>
+                    <li><a href= "#tables">Таблицы</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <article>
+        <h1>Документация к языку Markdown</h1>
+        <hr>
+        <section id="review">
+        <h2>Обзор</h2>
+        <p>Markdown (произносится маркда́ун) — облегчённый язык разметки, созданный с целью 
+        написания наиболее читаемого и удобного для правки текста, но пригодного для 
+        преобразования в языки для продвинутых публикаций (HTML, Rich Text и других).</p>
+        <h3>История</h3>
+        <p>Первоначально создан в 2004 году Джоном Грубером (<em>англ. John Gruber</em>) и Аароном Шварцем. 
+        Многие идеи языка были позаимствованы из существующих соглашений по разметке текста в 
+        электронных письмах. Реализации языка Markdown преобразуют текст в формате Markdown 
+        в валидный, <strong>правильно построенный XHTML </strong> и заменяют левые угловые скобки («&lt;») и 
+        амперсанды («&») на соответствующие коды сущностей. </p>
+        </section>
+        <hr>
+        <section id="headings">
+        <h2>Заголовки</h2>
+        <pre># Заголовок первого уровня
+#### Заголовок четвёртого уровня</pre>
+        <p>Первые два уровня заголовка также имеют альтернативный синтаксис:</p>
+        <p>Создание заголовков производится путём помещения знака решетки перед текстом заголовка.
+         Количество знаков «#» соответствует уровню заголовка. HTML предоставляет 6 уровней заголовков.</p>
+         <pre><code>Заголовок первого уровня 
+========================
+Заголовок второго уровня
+------------------------</code></pre>
+            </section>      
+            <hr>
+            <section id="links">
+            <h2>Ссылки</h2>
+            <p>ССылки можно создать несколькими способами</p>
+            <pre><code>[Текст ссылки](http://example.com "Заголовок ссылки")</code></pre>
+            <a href="http://example.com" title="Заголовок ссылки">Текст ссылки</a>
+            </section>      
+            <hr>
+            <section id="lists">
+            <h2>Списки</h2>
+            <p>Markdown поддерживает нумерованные и ненумерованные списки</p>
+            <p>Ненумерованные могут использовать *, +, -</p>
+            <pre><code>*   Red
+*   Green
+*   Blue</code></pre>
+            <pre><code>+   Red
++   Green
++   Blue</code></pre>
+                <ul>
+                    <li>RED</li>
+                    <li>GREEN</li>
+                    <li>BLUE</li>
+                </ul>
+                <p>Нумерованные списки используют число с точкой перед каждым элементом</p>
+                <pre><code>1 Bird
+2.  McHale
+3.  Parish
+        </code></pre>
+        <ol>
+            <li>Bird</li>
+            <li>McHale</li>
+             <li>Parish</li>
+        </ol>
+        <p>Списки определний можно указать следующим способом</p>
+         <pre><code>kramdown
+: A Markdown-superset converter</code></pre>
+            <dl>
+                <dt>kramdown</dt>
+                <dd>A Markdown-superset converter</dd>
+            </dl>
+        </section>
+               <hr>
+               <section id="quotes">
+               <h2>Цитаты</h2>
+               <p>Markdown использует символ &gt; для создания блочных цитат</p>
+               <pre><code>> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> 
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.</code></pre>
+                <blockquote> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+ consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.<br>
+
+ Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+ id sem consectetuer libero luctus adipiscing.
+                </blockquote>
+            </section>
+                <hr>
+                <section id="images">
+                <h2>Изображение</h2>
+                <p>изображение задается следующим образом</p>
+                <pre><code>![Alt text](markdown-logo.png "Optional title")</code></pre>
+                <img src="markdown-logo.png" title="Optional title" alt= "Alt text" width="200"> 
+            </section>
+                <hr>
+                <section id="tables">
+                <h2>Таблицы</h2>
+                <p>Таблицы доступны только некоторых декодерах языка Markdown</p>
+                <pre><code>| First cell|Second cell|Third cell
+| First | Second | Third |  
+| First | Second | Fourth |</code></pre>
+                    <table>
+                <tr>
+                    <th>First cell</th>
+                    <th>Second cell</th>
+                    <th>Third cell</th>
+                </tr>
+                <tr>
+                        <td>First</td>
+                        <td>Second</td>
+                        <td>Third</td>
+                </tr>
+                <tr>
+                        <td>First</td>
+                        <td>Second</td>
+                        <td>Fourth</td>
+                </tr>
+                    </table>
+                </section>
+                </article>
+                <footer>
+                    <p>© 2018 Usenov Aitemir</p>
+                </footer>
+            </main>
+            </body>
+</html>

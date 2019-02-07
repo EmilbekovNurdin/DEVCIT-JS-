@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание01</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const n =  parseInt(prompt('Бросьте кости'))
+                const counters = Array(11).fill(0)
+                for (let i = 0; i < n; ++i) {
+                    const die1 = Math.trunc(1 + Math.random() * 6)
+                    const die2 = Math.trunc(1 + Math.random() * 6)
+
+                    const sum = die1 + die2
+                    ++counters[sum - 2]
+                }
+                for (let i = 0; i < counters.lingth; ++i) {
+                    console.log(`${i + 2}: ${counters[i]}`)
+                }
+                
+            </script>
+        </body>
+</html>

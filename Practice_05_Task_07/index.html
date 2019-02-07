@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание07</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const month = parseInt(prompt("Введите номер месяца: "))
+                
+                let message
+                if (month == 3 || month == 4 || month == 5) {
+                    message = "Весна"
+                } else if (month == 6 || month == 7 || month == 8 ) {
+                    message = "Лето"
+                } else if (month == 9 || month == 10 || month == 11) {
+                    message = "Осень"
+                } else if (month == 12 || month == 1 || month == 2) {
+                    message = "Зима"
+                } else {
+                    message = "Неверный месяц"
+                }
+    
+                document.getElementById("result").textContent = message
+             </script>
+        </body>
+</html>

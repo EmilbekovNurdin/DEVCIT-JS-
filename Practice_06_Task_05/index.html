@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Drawing Sandbox</title>
+        <style>
+            body { margin: 0; }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const w = canvas.width  = window.innerWidth
+                    const h = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), w, h)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            function draw(ctx, w, h) {
+                ctx.fillStyle = 'black'
+                ctx.beginPath()
+                ctx.rect(0, 0, w, h)
+                ctx.fill()
+                
+                const n = 20
+                const x = w / 2
+                const y = h / 2
+                let red = 0
+                const redStep = 255 / n
+                let r = Math.min(w, h) / 2;
+                const rStep = r / n
+                
+                for (let i = 0; i < n; ++i) {
+                    ctx.fillStyle = `rgb(${Math.trunc(red)}, 0 , 0)`
+                    ctx.beginPath()
+                    ctx.arc(x, y, r, 0, Math.PI * 2)
+                    ctx.fill()
+
+                    red += redStep
+                    r -= rStep
+                } 
+                
+            }
+        </script>
+    </body>
+</html>

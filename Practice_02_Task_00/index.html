@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru"> 
+        <head>
+            <meta charset=utf-8>
+            <title>Задание01</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                let a = prompt("Первое слово")
+                let b = prompt("Второе слово")
+
+                //console.log("До перестановки: a = " + a + "; b = " + b + ";")
+                console.log (`До перестановки: a =  ${a}; b = ${b};`)
+
+                //TODO
+                
+                const temp = a
+                a=b
+                b = temp
+                console.log (`После перестановки: a =  ${a}; b = ${b};`)
+            </script>
+        </body>
+</html>

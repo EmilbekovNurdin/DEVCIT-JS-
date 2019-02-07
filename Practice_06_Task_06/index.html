@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Drawing Sandbox</title>
+        <style>
+            body { margin: 0; }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const w = canvas.width  = window.innerWidth
+                    const h = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), w, h)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            function draw(ctx, w, h) {
+                ctx.fillStyle = 'black'
+                ctx.beginPath()
+                ctx.rect(0, 0, w, h)
+                ctx.fill()
+                
+                const n = 200
+                let angle = 0
+                const minR = 150
+                const maxR = 200
+                const deltaAngle = 2 * Math.PI / n
+                const radius = 100
+                const cx = w / 2
+                const cy = h / 2
+                
+                for (let i = 0; i < n; ++i, angle += deltaAngle) {
+                    const radiusX = Math.trunc(minR + Math.random() * (maxR - minR + 1))
+                    const radiusY = Math.trunc(minR + Math.random() * (maxR - minR + 1))
+                    const x = cx + Math.cos(angle) * radiusX
+                    const y = cy + Math.sin(angle) * radiusY
+                    
+                    ctx.strokeStyle = `red`
+                    ctx.beginPath()
+                    ctx.moveTo(cx, cy)
+                    ctx.lineTo(x, y)
+                    ctx.stroke()
+
+                    
+                } 
+                
+            }
+        </script>
+    </body>
+</html>

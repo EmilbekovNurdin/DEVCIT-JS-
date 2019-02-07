@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание04</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const points = parseInt(prompt("Введите количество баллов: "))
+                
+                let grade
+                if (0 <= points && points<= 100) {
+                    if (points >= 90) {
+                    grade = "A"
+                    } else if (points >= 80){
+                    grade = "B"
+                    } else if (points >= 70){
+                    grade = "C"
+                    } else if (points >= 60){
+                    grade = "D"
+                    } else {
+                    grade = "F"
+                }
+                    document.getElementById("result").textContent = `Оценка: ${grade}`
+                } else {
+                    document.getElementById("result").textContent = `Знаечение ${points} является некорректным`
+                }
+            </script>
+        </body>
+</html>

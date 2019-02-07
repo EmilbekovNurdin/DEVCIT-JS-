@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>Задание 3</title>
+    </head>
+    <body>
+        <p id="result-before"></p>
+        <p id="result-after"></p>
+        <script>
+            const n = parseInt(prompt('Введите количество чисел'))
+            let numbers = Array(n)
+            for (let i = 0; i < n; ++i) {
+                numbers[i] = parseInt(prompt('Введите число'))
+            }
+
+            let message
+            
+            message = `До: `
+            for (let i = 0; i < n; ++i) {
+                message += numbers[i] + ' '
+            }
+            document.getElementById('result-before').textContent = message
+            /*
+           for (let i = 0, j = n - 1; i < j; ++i, --j) {
+               const temp = numbers[i]
+               numbers[i] = numbers[j]
+               numbers[j] = temp 
+           }
+           */
+           numbers = numbers.reverse()
+           
+            message = `После: `
+            for (let i = 0; i < n; ++i) {
+                message += numbers[i] + ' '
+                    
+            }
+            
+          
+            document.getElementById('result-after').textContent = message
+        </script>
+    </body>
+</html>

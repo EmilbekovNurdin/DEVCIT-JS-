@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание01</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const num = parseFloat(prompt("Введите вещественное число: "))
+                
+                // конструкция if c одной веткой
+
+                let result = num
+                if (result < 0) {
+                    result = -result
+                }
+                
+                document.getElementById("result").textContent = `|${num}| = ${result}`
+            </script>
+        </body>
+</html>

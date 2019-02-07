@@ -1,0 +1,41 @@
+body{
+    background-color:#84c7a1;
+}
+
+section {
+    background-color:#54add4;
+    color:#3315ab;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    border:2px dashed 
+
+}
+pre {
+    overflow: hidden
+}
+hr{
+    border:2px dashed yellow;
+    margin-left:100px;
+    margin-right:100px;
+
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #2f2111
+}
+
+nav li {
+    display: inline;
+    background-color: cornflowerblue;
+    padding: 3px;
+    border-radius: 3px;
+    border:5px coral;
+    box-shadow: 4px 4px 4px #FF5722 
+
+} 
+
+nav ul {
+    text-align: center;
+}

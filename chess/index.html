@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Drawing Sandbox</title>
+        <style>
+            body { margin: 0; }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const w = canvas.width  = window.innerWidth
+                    const h = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), w, h)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            function draw(ctx, w, h) {
+                ctx.fillStyle = 'white'
+                ctx.beginPath()
+                ctx.rect(0, 0, w, h)
+                ctx.fill()
+                
+                const n = 8
+                const size = 60
+                const fullSize = n * size
+                const cx = w / 2 - fullSize / 2
+                const cy = h / 2 - fullSize / 2
+                for (let y = 0; y < n; ++y) {    
+                    for (let x = 0; x < n; ++x) {
+                        if ((x + y) % 2 == 0) {
+                            ctx.fillStyle = 'orange'
+                        } else 
+                            ctx.fillStyle = 'black'
+                        ctx.beginPath()
+                        ctx.rect(cx + x * size, cy + y * size, size, size)
+                        ctx.fill()   
+                    } 
+                }
+            }
+        </script>
+    </body>
+</html>

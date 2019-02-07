@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8>
+            <title>Задание09</title>
+        </head>
+        <body>
+            <p id="result"></p>
+            <script>
+                const points = parseInt(prompt("Введите уровень сложности: "))
+                
+                let level   
+                if (0 <= points && points <= 5) {
+                    if ( points >= 4) {
+                    level = "Профессионал"
+                    } else if (points >= 2){
+                    level = "Опытный игрок"
+                    } else if (points == 1){
+                    level = "Любитель"
+                    } else {
+                    level = "Полный чайник"
+                }
+                    document.getElementById("result").textContent = `Рейтинг: ${level}`
+                } else {
+                    document.getElementById("result").textContent = `Значение ${points} является некорректным`
+                }
+            </script>
+        </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Drawing Sandbox</title>
+        <style>
+            body { margin: 0; overflow: hidden; }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const w = canvas.width  = window.innerWidth
+                    const h = canvas.height = window.innerHeight
+                    setup(canvas.getContext('2d'), w, h)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            const n = 10
+            const minR = 10
+            const maxR = 10
+            const maxSpeed = 100;
+
+            let x = Array(n)
+            let y = Array(n) 
+            let dx = Array(n)
+            let dy = Array(n)
+            const r = Array(n)
+
+            function setup(ctx, w, h) {
+                for (let i = 0; i < n; ++i) {
+                    r[i] = minR + Math.random() * (maxR - minR + 1)
+                    
+                    x[i] = r[i] + Math.random() * (w - 2 * r[i]) 
+                    y[i] = r[i] + Math.random() * (h - 2 * r[i])
+                    
+                    dx[i] = -maxSpeed + Math.random() * (2 * maxSpeed + 1)
+                    dy[i] = -maxSpeed + Math.random() * (2 * maxSpeed + 1)
+                }
+                window.requestAnimationFrame(timestamp => draw(ctx, w, h, timestamp))
+            }
+            
+            function draw(ctx, w, h, timestamp) {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.01)'
+                ctx.beginPath()
+                ctx.rect(0, 0, w, h)
+                ctx.fill()
+
+                for (let i = 0; i < n; ++i) {    
+                    ctx.fillStyle = `white`
+                    ctx.beginPath()
+                    ctx.arc(x[i], y[i], r[i], 0, Math.PI * 2)
+                    ctx.fill()
+
+                    x[i] += dx[i]
+                    if (x[i] - r[i] < 0 || x[i] + r[i] > w) dx[i] = -dx[i]
+                    y[i] += dy[i]
+                    if (y[i] - r[i] < 0 || y[i] + r[i] > h) dy[i] = -dy[i]
+                    
+                    if (i > 0) {   
+                        ctx.strokeStyle = `white`
+                        ctx.beginPath()
+                        ctx.moveTo(x[i - 1], y[i - 1])
+                        ctx.lineTo(x[i], y[i])
+                        ctx.stroke()
+                    }
+                }
+            
+                window.requestAnimationFrame(timestamp => draw(ctx, w, h, timestamp))
+            }
+        </script>
+    </body>
+</html>

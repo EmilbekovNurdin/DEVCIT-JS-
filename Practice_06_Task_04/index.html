@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Drawing Sandbox</title>
+        <style>
+            body { margin: 0; }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const w = canvas.width  = window.innerWidth
+                    const h = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), w, h)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            function draw(ctx, w, h) {
+                ctx.fillStyle = 'black'
+                ctx.beginPath()
+                ctx.rect(0, 0, w, h)
+                ctx.fill()
+                
+                const n = 250
+                const minR = 10
+                const maxR = 50
+                for (let i = 0; i < n; ++i) {
+                    const red   = Math.trunc(Math.random() * 256) 
+                    const green = Math.trunc(Math.random() * 256)
+                    const blue  = Math.trunc(Math.random() * 256) 
+                    const x = Math.trunc(Math.random() * w)
+                    const y = Math.trunc(Math.random() * h)
+                    const r = Math.trunc(minR + Math.random() * (maxR - minR + 1))
+                    
+                    ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`
+                    ctx.beginPath()
+                    ctx.arc(x, y, r, 0, Math.PI * 2)
+                    ctx.fill()  
+                }
+            }
+        </script>
+    </body>
+</html>
