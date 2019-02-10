@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>Задание 1</title>
+    </head>
+    <body>
+        <p id="result"></p>
+        <script>
+            const line = prompt('Введите набор чисел: ')
+            // '10 20 30' -> split(...) -> ['10', '20', '30'] 
+            //   ^ line                     ^ parts
+            
+            // let sum = 0
+            // const parts = line.split(' ')
+            // for (let i = 0; i < parts.length; ++i) {
+            //    if (i % 2 == 0) {
+            //        const number = parseInt(parts[i])
+            //        sume += number * number
+            //    }
+            // }
+            
+            const sum = line.split(' ')
+                            .filter((_, i) => i % 2 == 0)
+                            .map(item => parseInt(item))
+                            .map(item => item * item)
+                            .reduce((sum, item) => sum + item)
+
+            let message = `Сумма квадратов чисел на четных позициях: ${sum}`
+            document.getElementById('result').textContent = message
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>Задание 1</title>
+    </head>
+    <body>
+        <p id="result"></p>
+        <script>
+            function abs(x) {
+                return x < 0 ? -x : x 
+            }
+
+            const coord = parseInt(prompt('Введите исходную координату '))
+            const point1 = parseInt(prompt('Введите первую точку '))
+            const point2 = parseInt(prompt('Введите вторую точку '))
+
+            const dist1 = abs(point1 - coord) 
+            const dist2 = abs(point2 - coord)
+            
+            let message
+            if (dist1 < dist2) {
+                message = `Первая точка ближе второй. Дистанция равна ${dist1}`
+            } else if (dist2 < dist1) {
+                message = `Вторая точка ближе первой. Дистанция равна ${dist2}`
+            } else {
+                message = `Дистанция равны ${dist1}`
+            }
+            document.getElementById('result').textContent = message
+        </script>
+    </body>
+</html>

@@ -35,9 +35,9 @@
                 for (let y = 0; y < n; ++y) {    
                     for (let x = 0; x < n; ++x) {
                         if ((x + y) % 2 == 0) {
-                            ctx.fillStyle = 'orange'
-                        } else 
                             ctx.fillStyle = 'black'
+                        } else 
+                            ctx.fillStyle = 'white'
                         ctx.beginPath()
                         ctx.rect(cx + x * size, cy + y * size, size, size)
                         ctx.fill()   

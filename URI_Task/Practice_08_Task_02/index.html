@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>Задание 1</title>
+    </head>
+    <body>
+        <p id="result"></p>
+        <script>
+            function max(a, b, c) 
+                let max = 0
+                if (a > b) {
+                    if (a > c) {
+                        max = a 
+                    } else {
+                        max = c 
+                    }    
+                } else {
+                    if (b > c) {
+                        max = b 
+                    } else {
+                        max = c
+                    } 
+                }
+
+                return max
+            }    
+            
+            const line = promt('Введите три числа: ')
+            // '10 20 30' -> split(...) -> ['10', '20', '30'] 
+            //   ^ line                     ^ parts
+            const parts = line.split(' ')
+            const num1 = parseInt(parst[0])
+            const num2 = parseInt(parst[1])
+            const num3 = parseInt(parst[2])
+            
+            let res = max(num1, num2, num3)
+            
+            let message = `Максимальное значение: ${res}`
+            document.getElementById('result').textContent = message
+        </script>
+    </body>
+</html>
